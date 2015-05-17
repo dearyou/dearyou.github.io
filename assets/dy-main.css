@@ -9,7 +9,7 @@ body {
     color: #504A5A;
 }
 
-#header {
+.header {
     background-color: #F5F5F6;
     color: #504A5A;
     overflow: auto;
@@ -22,7 +22,7 @@ body {
     right: 0px;
 }
 
-#header h1 {
+.header h1 {
     margin: 0px;
 }
 
@@ -58,13 +58,13 @@ p.body {
 }
 
 #feed {
-    border-left: 50px solid;
+    border-left: 20px solid;
     font-size: 18px;
     overflow: auto;
     margin-top: 60px;
 }
 
-#compose {
+#compose, #cancel {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -76,11 +76,11 @@ p.body {
 button {
     width: 100%;
     padding: 5px;
-    background-color: #504A5A;
+    background-color: #FFF;
     height: 40px;
     border: none;
     line-height: 30px;
-    color: #FFF;
+    color: #504A5A;
     font-size: 18px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -89,7 +89,7 @@ button {
 }
 
 textarea {
-    width: 490px;
+    width: 240px;
     height: 100px;
     padding: 5px;
     font-size: 18px;
@@ -118,4 +118,19 @@ form.compose.disabled:before {
     display: block;
     opacity: 0.5;
     position: absolute;
+}
+
+.compose {
+    width: 250px;
+    margin: 80px auto;
+}
+
+.compose_overlay {
+    background-color: #504A5A;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
 }

@@ -50,11 +50,21 @@ function submit(body) {
 
 $(document).ready(function () {
     $(document).on("click", "#compose", function () {
-        event.preventDefault()
+        event.preventDefault();
         $("body").css("overflow", "hidden");
-        // $("body").append(function () {
-        //     return $("<div />").
-        // });
+        $("body").prepend(function () {
+            var div = $("<div />").addClass("compose_overlay").css("display", "none");
+            div.append('<div class="header"><h1>Dear You</h1><a href="#" id="cancel">Cancel</a></div>')
+            div.append('<form class="compose" method="get"><textarea name="body" placeholder="Compose"></textarea><button type="submit">Post</button></form>')
+            return div;
+        });
+        $(".compose_overlay").fadeIn("fast");
+    });
+    $(document).on("click", "#cancel", function () {
+        event.preventDefault();
+        $(".compose_overlay").fadeOut("fast", function (){
+            $(this).remove();
+        });
     });
     $(document).on("submit", ".compose", function () {
         event.preventDefault();
