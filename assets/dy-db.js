@@ -4,14 +4,13 @@ function loadAll() {
     db.allDocs({
         include_docs: true,
         attachments: true
-    }).then(function (result) {
-        result.rows.forEach(function(docs) {
+    }, function (err, response) {
+        console.log(response)
+        response.rows.forEach(function(docs) {
             var doc = docs.doc;
             createPost(doc);
         });
-        $(".timeago").timeago();
-        }).catch(function (err) {
-        console.log(err);
+        // $(".timeago").timeago();
     });
 }
 
