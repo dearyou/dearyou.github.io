@@ -1,7 +1,7 @@
 var db = new PouchDB('https://dearyou.cloudant.com/posts');
 
 function loadAll() {
-    db.allDocs({
+    db.query("posts/all", {
         include_docs: true,
         attachments: true
     }, function (err, response) {
@@ -10,7 +10,7 @@ function loadAll() {
             var doc = docs.doc;
             createPost(doc);
         });
-        // $(".timeago").timeago();
+        $(".timeago").timeago();
     });
 }
 
@@ -31,6 +31,7 @@ function nl2br (str, is_xhtml) {
 
 function formatedDateFrom(time) {
     var date = new Date(time*1000);
+    console.log(date.toISOString())
     return date.toISOString();
 }
 
@@ -48,7 +49,14 @@ function submit(body) {
 }
 
 $(document).ready(function () {
-    $(".compose").on("submit", function () {
+    $(document).on("click", "#compose", function () {
+        event.preventDefault()
+        $("body").css("overflow", "hidden");
+        // $("body").append(function () {
+        //     return $("<div />").
+        // });
+    });
+    $(document).on("submit", ".compose", function () {
         event.preventDefault();
         var form = $(this).serializeArray();
         if (form[0].value.length > 5 && /\S/.test(form[0].value)) {

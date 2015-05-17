@@ -5,19 +5,21 @@
 
 body {
     margin: 0px;
-    background-color: #F5F6F7;
-    color: #2C3E50;
+    background-color: #FFF;
+    color: #504A5A;
 }
 
 #header {
-    background-color: #1ABC9C;
-    color: #FFF;
+    background-color: #F5F5F6;
+    color: #504A5A;
     overflow: auto;
-    text-align: center;
     padding: 10px;
-    margin-bottom: 20px;
     height: 40px;
     line-height: 40px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 #header h1 {
@@ -40,26 +42,26 @@ a:hover {
 
 .bolder {
     font-weight: bold;
+    margin-top: 20px;
 }
+
 
 p.body {
     margin: 10px 0px;
+    /*line-height: 18px;*/
 }
 
 .time {
     font-size: 14px;
-    color: #1ABC9C;
+    color: #14B2CF !important;
+    margin-bottom: 20px;
 }
 
 #feed {
-    width: 500px;
-    margin: auto;
-    padding: 10px;
-    background-color: #FFF;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-left: 50px solid;
     font-size: 18px;
+    overflow: auto;
+    margin-top: 60px;
 }
 
 #compose {
@@ -74,7 +76,7 @@ p.body {
 button {
     width: 100%;
     padding: 5px;
-    background-color: #2C3E50;
+    background-color: #504A5A;
     height: 40px;
     border: none;
     line-height: 30px;
@@ -92,20 +94,24 @@ textarea {
     padding: 5px;
     font-size: 18px;
     resize: none;
-    border: 1px solid #2C3E50;
+    border: 1px solid;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
 
 .post:not(:first-child) {
-    border-top: 1px solid #2C3E50;
+    border-top: 5px solid;
 }
 
+.post p {
+    color: #333;
+    padding: 0px 20px;
+}
 
 form.compose.disabled:before {
     content: "";
-    background: #2C3E50;
+    background: #504A5A;
     height: 157px;
     width: 500px;
     /* top: 0px; */
