@@ -19,6 +19,14 @@ a:hover {
     text-decoration: underline;
 }
 
+p {
+    margin: 5px 0px;
+}
+
+.padded {
+    padding: 5px;
+}
+
 .header {
     font-weight: bold;
     height: 40px;
@@ -29,7 +37,7 @@ a:hover {
 }
 
 .section_header {
-    padding: 10px 20px;
+    padding: 30px 20px 10px 20px;
     color: #8E8E93;
     font-size: 15px;
 }
@@ -58,4 +66,13 @@ a:hover {
     text-transform: capitalize;
     font-size: 15px;
     color: #5BBCC9;
+}
+
+.footer {
+    color: #8E8E93;
+    padding: 20px;
+}
+
+.footer a:hover {
+    color: #092930;
 }
