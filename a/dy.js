@@ -6,7 +6,7 @@ window.dy = {
         post.html(inner_post)
         if (doc.body.match(/\B#\w*[a-zA-Z]+\w*/ig)) {
             doc.body.match(/\B#\w*[a-zA-Z]+\w*/ig).forEach(function(tag) {
-                doc.body = doc.body.replace(tag, "<a class='tag' href='/tag/?" + tag.substring(1) + "'>" + tag + "</a>")
+                doc.body = doc.body.replace(tag, "<a class='tag' href='/tag/?" + tag.substring(1).toLowerCase() + "'>" + tag + "</a>")
             })
         }
         inner_post.append("<div class='post_body'>" + doc.body + "</div>")
@@ -26,14 +26,48 @@ window.dy = {
         });
         return result;
     }
-    // callback: function(data) {
-    //     if (data.rows.length > 0) {
-    //         document.getElementById("title").innerHTML = "Posts tagged as '" + tag + "'"
-    //         data.rows.forEach(function(row) {
-    //             createDocs(row.doc)
-    //         })
-    //     } else {
-    //         document.getElementById("title").innerHTML = "Not found!"
-    //     }
-    // }
+}
+
+if (!Object.keys) {
+    Object.keys = (function() {
+        'use strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+            hasDontEnumBug = !({
+                toString: null
+            }).propertyIsEnumerable('toString'),
+            dontEnums = [
+                'toString',
+                'toLocaleString',
+                'valueOf',
+                'hasOwnProperty',
+                'isPrototypeOf',
+                'propertyIsEnumerable',
+                'constructor'
+            ],
+            dontEnumsLength = dontEnums.length;
+
+        return function(obj) {
+            if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                throw new TypeError('Object.keys called on non-object');
+            }
+
+            var result = [],
+                prop, i;
+
+            for (prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) {
+                    result.push(prop);
+                }
+            }
+
+            if (hasDontEnumBug) {
+                for (i = 0; i < dontEnumsLength; i++) {
+                    if (hasOwnProperty.call(obj, dontEnums[i])) {
+                        result.push(dontEnums[i]);
+                    }
+                }
+            }
+            return result;
+        };
+    }());
 }
