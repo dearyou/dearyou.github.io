@@ -16,6 +16,11 @@
         ga('create', 'UA-63332050-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script>
+        if (window.location.hostname != "localhost" && window.location.protocol != "https:") {
+            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
 </head>
 <body>
     <div id="wrap">
