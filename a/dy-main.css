@@ -70,3 +70,7 @@ a.tag {
     color: #E76851;
     text-transform: capitalize;
 }
+
+.timeago {
+	display: block;
+}

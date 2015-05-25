@@ -10,7 +10,7 @@ window.dy = {
             })
         }
         inner_post.append("<div class='post_body'>" + doc.body + "</div>")
-        inner_post.append("<div class='post_time timeago' title='" + dy.formatedDateFrom(doc.time) + "'></div>")
+        inner_post.append("<a class='post_time timeago' href='/letter/?" + doc._id + "' title='" + dy.formatedDateFrom(doc.time) + "'></a>")
         $(".posts").append(post)
     },
     formatedDateFrom: function(time) {
