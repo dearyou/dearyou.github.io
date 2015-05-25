@@ -8,10 +8,6 @@ html, body {
 	height: 100%;
 }
 
-h1 {
-    display: inline;
-}
-
 body {
 	background-color: #84ECAF;
 	color: #000;
@@ -46,6 +42,11 @@ h1, h2, h3, p {
 	margin: auto;
 	padding: 20px;
 }
+
+.u {
+	text-decoration: underline;
+}
+
 /* end basics */
 
 a.tag {
@@ -80,10 +81,9 @@ a.tag {
 }
 
 .section_header {
-    position: relative;   margin: auto;
-    padding: 0px 20px 0px 40px;
-    margin-bottom: -10px;
-	font-size: 15px;
+    position: relative;
+	margin: auto;
+    padding: 20px 20px 0px 20px;
 }
 
 a.search_link {
@@ -92,8 +92,7 @@ a.search_link {
     line-height: 24px;
     right: 20px;
     position: absolute;
-    top: 50%;
-    margin-top: -12px;
+    top: 30px;
     font-size: 20px;
 }
 
@@ -114,4 +113,9 @@ a.search_link {
 input {
     -webkit-appearance: none;
     border-radius: 0;
+}
+
+.links {
+    padding-left: 5px;
+    border-left: 3px solid;
 }
