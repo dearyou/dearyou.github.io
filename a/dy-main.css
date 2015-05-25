@@ -110,3 +110,8 @@ a.search_link {
     color: #FFF;
     background-color: #E76851;
 }
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
