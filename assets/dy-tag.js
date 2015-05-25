@@ -19,6 +19,7 @@ $(document).ready(function() {
             $(".timeago").timeago()
         })
     } else {
+        $(".section_header").remove()
         $(".posts").html("<div class='post'><div class='inner_post'><h3>Try clicking \"Search\" ;)</h3></div></div>")
     }
     $(document).on("submit", ".tag_form", function() {
