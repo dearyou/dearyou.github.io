@@ -4,7 +4,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/a/yp-timeago.js"></script>
     <script src="/a/dy.js"></script>
-    <script src="/a/dy-main.js"></script>
+    <script src="/a/dy-search.js"></script>
     <link href="/a/dy-main.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="We have created this website/application to allow the world to write anonymous letters.">
@@ -22,20 +22,14 @@
 <body>
     <div id="wrap">
         <div class="section">
-            <h1>Dear You,</h1>
-            <a class="search_link" href="/search/">Search</a>
+            <a href="/"><h1>Dear You,</h1></a>
         </div>
-        <div class="section_header">A LETTER FROM RUXIM</div>
         <div class="section colored">
-            <div class="post">
-                <div class="inner_post">
-                    <div class="post_header">Dear You,</div>
-                    <div class="post_body">We have created this website/application to allow the world to write anonymous letters. By addressing these letters to "You," people can freely express themselves and keep true to the goals of Ruxim.</div>
-                    <div class="post_time timeago" title="2015-05-20T19:53:35.000Z">a day ago</div>
-                </div>
-            </div>
+            <form class="search_form">
+                <input type="text" name="q" placeholder="Search!" />
+            </form>
         </div>
-        <div class="section_header">20 MOST RECENT POSTS</div>
+        <div class="section_header"></div>
         <div class="section posts colored">
         </div>
     </div>

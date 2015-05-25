@@ -4,9 +4,13 @@ $(document).ready(function() {
         key: "\"" + id + "\"",
         include_docs: true
     }), function (data) {
-        data.rows.forEach(function(row) {
-            dy.createDocs(row.doc)
-        })
+        if (data.rows.length > 0) {
+            data.rows.forEach(function(row) {
+                dy.createDocs(row.doc)
+            })
+        } else {
+            $(".posts").html("<div class='no_results'>Sorry, that post does not exist! Maybe check out the 'Search' link?</div>")
+        }
         $(".timeago").timeago()
     })
 })

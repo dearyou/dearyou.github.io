@@ -7,21 +7,19 @@ $(document).ready(function() {
             descending: true,
             include_docs: true
         }), function (data) {
+            $(".section_header").text("POSTS TAGGED AS '" + tag.toUpperCase() + "'")
             if (data.rows.length > 0) {
                 $("title").text("Tagged as '" + tag + "' | Dear You,")
                 data.rows.forEach(function(row) {
                     dy.createDocs(row.doc)
                 })
             } else {
-                dy.createDocs({
-                    body: "Apparently there are no posts with that tag!",
-                    time: Math.floor(Date.now() / 1000)
-                })
+                $(".posts").html("<div class='no_results'>Sorry, there are no posts with that tag. Click the 'Search' link!</div>")
             }
             $(".timeago").timeago()
         })
     } else {
-        $(".posts").html("<h3>Check out that search bar! ;)</h3>")
+        $(".posts").html("<h3>Try clicking \"Search\" ;)</h3>")
     }
     $(document).on("submit", ".tag_form", function() {
         event.preventDefault()

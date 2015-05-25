@@ -8,6 +8,10 @@ html, body {
 	height: 100%;
 }
 
+h1 {
+    display: inline;
+}
+
 body {
 	background-color: #84ECAF;
 	color: #000;
@@ -73,4 +77,36 @@ a.tag {
 
 .timeago {
 	display: block;
+}
+
+.section_header {
+    position: relative;   margin: auto;
+    padding: 0px 20px 0px 40px;
+    margin-bottom: -10px;
+	font-size: 15px;
+}
+
+a.search_link {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    right: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    font-size: 20px;
+}
+
+.search_form input {
+    width: 100%;
+    border: none;
+    padding: 5px 0px;
+    text-indent: 5px;
+	outline: none;
+}
+
+.no_results {
+    padding: 5px;
+    color: #FFF;
+    background-color: #E76851;
 }

@@ -25,6 +25,12 @@ window.dy = {
             result[item[0]] = decodeURIComponent(item[1]);
         });
         return result;
+    },
+    getParameterByName: function(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 }
 

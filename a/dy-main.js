@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    $.getJSON('https://dearyou.cloudant.com/posts/_design/posts/_view/all?include_docs=true&descending=true', function(e) {
+    $.getJSON('https://dearyou.cloudant.com/posts/_design/posts/_view/all', {
+        include_docs: true,
+        descending: true,
+        limit: 20
+    }, function(e) {
         e.rows.forEach(function(row, index) {
             dy.createDocs(row.doc)
         })
